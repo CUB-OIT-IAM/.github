@@ -8,6 +8,6 @@
 - **Support & Help:** Find us on Teams 
 
 ## Getting Started
-- Review our [Contribution Guidelines](https://github.com/UCB-OIT-IAM/.github/blob/main/CONTRIBUTING.md) before opening pull requests.
-- Report security concerns using our [Security Policy](https://github.com/UCB-OIT-IAM/.github/blob/main/.github/SECURITY.md).
+- Review our [Contribution Guidelines](https://github.comUCB-OIT-IAM/.github/blob/main/CONTRIBUTING.md) before opening pull requests.
+- Report security concerns using our [Security Policy](https://github.comUCB-OIT-IAM/.github/blob/main/.github/SECURITY.md).
 
