@@ -1,0 +1,40 @@
+name: Maven Semantic Release
+on:
+  workflow_call:
+    inputs:
+      java-version:
+        required: falsetype: string
+        default: '21'maven-args:
+        required: falsetype: string
+        default: ''jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Java & GitHub Packages Auth
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ inputs.java-version }}
+          distribution: 'temurin'server-id: github
+          server-username: GITHUB_ACTOR
+          server-password: GITHUB_TOKEN
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx -p semantic-release -p @semantic-release/exec semantic-release \
+            --branches main \
+            --plugins "@semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/exec,@semantic-release/github" \
+            --prepare-cmd "mvn versions:set -DnewVersion=\${nextRelease.version} -DgenerateBackupPoms=false ${{ inputs.maven-args }}" \
+            --publish-cmd "mvn deploy -DskipTests ${{ inputs.maven-args }}"
