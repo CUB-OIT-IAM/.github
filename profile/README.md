@@ -8,6 +8,6 @@ This is a collection of repositories that OIT-IAM uses to mange and direct Ident
 - **Support & Help:** Find us on Teams 
 
 ## Getting Started
-- Review our [Contribution Guidelines](https://github.com/UCB-OIT-IAM/.github/blob/main/CONTRIBUTING.md) before opening pull requests.
-- Report security concerns using our [Security Policy](https://github.com/UCB-OIT-IAM/.github/blob/main/.github/SECURITY.md).
+- Review our [Contribution Guidelines](https://github.com/CUB-OIT-IAM/.github/blob/main/CONTRIBUTING.md) before opening pull requests.
+- Report security concerns using our [Security Policy](https://github.com/CUB-OIT-IAM/.github/blob/main/.github/SECURITY.md).
 
